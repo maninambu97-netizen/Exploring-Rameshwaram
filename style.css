@@ -305,8 +305,8 @@ nav a:hover {
 }
 
 .map{
-    height: 300px;
-    width: 500px;
+    height: 400px;
+    width: 100%;
 
 }
 
@@ -463,9 +463,16 @@ footer {
 /* SMALL PHONES */
 
 @media (max-width: 380px) {
-
+header{
+    width: 100%;
+}
     nav ul {
         gap: 9px;
+    }
+    .bg-video{
+        height: 100%;
+        width: 100%;
+        /* object-fit: contain; */
     }
 
     nav a {
