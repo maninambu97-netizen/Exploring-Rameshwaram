@@ -1,0 +1,734 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* html {
+    scroll-behavior: smooth;
+} */
+
+body {
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+}
+
+/* NAVBAR */
+
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    background: rgba(0, 0, 0, 0.75);
+}
+
+nav {
+    min-height: 70px;
+    padding: 12px 6%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav h2 {
+    color: white;
+    font-size: clamp(20px, 3vw, 28px);
+}
+
+nav ul {
+    display: flex;
+    gap: clamp(12px, 3vw, 30px);
+    list-style: none;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: clamp(13px, 2vw, 17px);
+    transition: 0.2s;
+}
+
+nav a:hover {
+    color: #ffd166;
+}
+
+/* HOME */
+.hero {
+    position: relative;
+    min-height: 100vh;
+    overflow: hidden;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+}
+
+/* Pamban Bridge Video */
+
+.bg-video {
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    
+
+    z-index: 0;
+}
+
+/* Dark Overlay */
+
+.overlay {
+    position: absolute;
+    inset: 0;
+
+    background: rgba(0, 0, 0, 0.48);
+
+    z-index: 1;
+}
+
+/* Content */
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+
+    color: white;
+
+    width: 90%;
+    max-width: 1000px;
+
+    animation: slideUp 0.8s ease;
+}
+
+.hero h1 {
+    font-size: 50px;
+    line-height: 1.1;
+
+    margin: 18px 0;
+
+    text-shadow: 3px 3px 10px black;
+}
+
+.hero-content p {
+    font-size: 18px;
+}
+
+/* Button */
+
+.btn {
+    display: inline-block;
+
+    margin-top: 30px;
+    padding: 14px 30px;
+
+    background: #ffd166;
+    color: #222;
+
+    text-decoration: none;
+    border-radius: 30px;
+
+    font-weight: bold;
+
+    transition: 0.2s;
+  
+}
+
+.btn:hover {
+    transform: scale(1.08);
+}
+
+/* Animation */
+
+@keyframes slideUp {
+
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+    .hero-content {
+        width: 92%;
+    }
+
+    .hero h1 {
+        font-size: 42px;
+    }
+
+    .hero-content p {
+        font-size: 15px;
+    }
+
+}
+
+/* EXPLORE */
+
+.explore {
+    padding: clamp(70px, 10vw, 120px) 6%;
+    text-align: center;
+    background: #f5f7fa;
+}
+
+.explore h1,
+.about h1,
+.contact h1 {
+    font-size: clamp(30px, 5vw, 48px);
+    margin-bottom: 12px;
+}
+
+.subtitle {
+    color: #666;
+    font-size: clamp(14px, 2vw, 18px);
+    margin-bottom: 45px;
+}
+
+/* RESPONSIVE CARDS */
+
+.cards {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(250px, 1fr));
+
+    gap: 25px;
+}
+
+.bamban {
+    position: relative;
+    height: 300px;
+    width: 280px;
+    background-color: black;
+    overflow: hidden;
+    box-shadow: 0px 0px 10px black ;
+    /* transition: all 1s; */
+}
+
+.bamban-bridge {
+    width: 100%;
+    height: 100%;
+}
+
+.bamban-ptag {
+    width: 100%;
+    font-size: 15px;
+    color: white;
+    margin-top: 10px;
+    opacity: 0;
+}
+
+.bamban-down-div {
+    height: 100%;
+    width: 100%;
+    padding: 10px;
+    position: absolute;
+    /* top: 0px; */
+    background-color: black;
+    color: white;
+    top: 85%;
+    transition: all 2s;
+}
+
+.bamban:hover .bamban-down-div{
+    top: 0;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.6);
+    
+}
+
+.bamban:hover .bamban-ptag{
+    opacity: 1;
+} 
+
+/* .card {
+    background: white;
+    padding: 35px 25px;
+    border-radius: 18px;
+
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+
+    transition: 0.25s;
+
+    animation: fadeIn 0.8s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+.icon {
+    font-size: 50px;
+    margin-bottom: 15px;
+}
+
+.card h2 {
+    font-size: clamp(19px, 2.5vw, 25px);
+    margin-bottom: 12px;
+}
+
+.card p {
+    color: #666;
+    line-height: 1.6;
+    font-size: 15px;
+} */
+
+/* ABOUT */
+
+.about {
+    padding: clamp(70px, 10vw, 120px) 8%;
+    text-align: center;
+    background: #e9f7ff;
+    min-height: 100vh;
+}
+
+.map{
+    height: 300px;
+    width: 500px;
+
+}
+
+.about p {
+    max-width: 800px;
+    margin: 25px auto 0;
+
+    line-height: 1.8;
+    color: #555;
+
+    font-size: clamp(15px, 2vw, 18px);
+}
+
+/* CONTACT */
+
+.contact {
+    padding: clamp(70px, 10vw, 120px) 6%;
+    text-align: center;
+}
+
+form {
+    width: 100%;
+    max-width: 600px;
+    margin: 30px auto;
+
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 15px;
+
+    border: 1px solid #ddd;
+    border-radius: 10px;
+
+    font-size: 16px;
+}
+
+textarea {
+    min-height: 130px;
+    resize: vertical;
+}
+
+button {
+    padding: 15px;
+
+    border: none;
+    border-radius: 10px;
+
+    background: #222;
+    color: white;
+
+    font-size: 16px;
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+button:hover {
+    transform: scale(1.03);
+}
+
+/* FOOTER */
+
+footer {
+    padding: 25px 15px;
+    text-align: center;
+
+    background: #111;
+    color: white;
+
+    font-size: 14px;
+}
+
+/* ANIMATIONS */
+
+@keyframes slideUp {
+
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+@keyframes fadeIn {
+
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+@keyframes zoom {
+
+    from {
+        background-size: 100%;
+    }
+
+    to {
+        background-size: 108%;
+    }
+
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    nav {
+        flex-direction: column;
+        gap: 10px;
+        padding: 12px 10px;
+    }
+
+    nav ul {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .hero {
+        padding-top: 150px;
+    }
+
+    .hero h1 {
+        font-size: 42px;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .card {
+        padding: 30px 20px;
+    }
+
+}
+
+/* SMALL PHONES */
+
+@media (max-width: 380px) {
+
+    nav ul {
+        gap: 9px;
+    }
+
+    nav a {
+        font-size: 12px;
+    }
+
+    .hero h1 {
+        font-size: 34px;
+    }
+
+    .hero-content p {
+        font-size: 14px;
+    }
+
+}
+
+/* =========================
+   EXTRA ANIMATIONS
+========================= */
+
+/* Hero title animation */
+
+.hero-content h1 {
+    animation: titleReveal 0.8s ease-out both;
+}
+
+@keyframes titleReveal {
+    0% {
+        opacity: 0;
+        transform: translateY(-40px) scale(0.9);
+        letter-spacing: 12px;
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+        letter-spacing: 1px;
+    }
+}
+
+
+/* Welcome text */
+
+.hero-content p:first-child {
+    animation: fadeDown 0.6s ease-out both;
+}
+
+@keyframes fadeDown {
+    from {
+        opacity: 0;
+        transform: translateY(-25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* Subtitle */
+
+.hero-content h1 + p {
+    animation: fadeUp 0.9s ease-out 0.2s both;
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* Button animation */
+
+.hero .btn {
+    animation:
+        buttonIn 0.7s ease-out 0.4s both,
+        buttonPulse 1.5s ease-in-out 1.5s infinite;
+}
+
+@keyframes buttonIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px) scale(0.8);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes buttonPulse {
+    0%, 100% {
+        box-shadow: 0 0 0 rgba(255, 209, 102, 0);
+    }
+
+    50% {
+        box-shadow: 0 0 20px rgba(255, 209, 102, 0.7);
+    }
+}
+
+
+/* Explore heading */
+
+.explore h1 {
+    animation: headingZoom 0.7s ease-out;
+}
+
+@keyframes headingZoom {
+    from {
+        opacity: 0;
+        transform: scale(0.7);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+
+/* Cards */
+
+.card {
+    animation: cardAppear 0.6s ease-out both;
+}
+
+.card:nth-child(1) {
+    animation-delay: 0.05s;
+}
+
+.card:nth-child(2) {
+    animation-delay: 0.10s;
+}
+
+.card:nth-child(3) {
+    animation-delay: 0.15s;
+}
+
+.card:nth-child(4) {
+    animation-delay: 0.20s;
+}
+
+.card:nth-child(5) {
+    animation-delay: 0.25s;
+}
+
+.card:nth-child(6) {
+    animation-delay: 0.30s;
+}
+
+@keyframes cardAppear {
+    from {
+        opacity: 0;
+        transform: translateY(35px) scale(0.92);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+
+/* Card icon floating */
+
+.icon {
+    display: inline-block;
+    animation: floating 2s ease-in-out infinite;
+}
+
+@keyframes floating {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+
+/* Card hover */
+
+.card:hover {
+    transform: translateY(-12px) scale(1.03);
+    transition: 0.2s ease;
+}
+
+
+/* Navbar animation */
+
+header {
+    animation: navSlide 0.5s ease-out;
+}
+
+@keyframes navSlide {
+    from {
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* Navbar links */
+
+nav li {
+    transition: 0.2s;
+}
+
+nav li:hover {
+    transform: translateY(-3px);
+}
+
+
+/* Contact form */
+
+.contact input,
+.contact textarea {
+    transition: 0.2s ease;
+}
+
+.contact input:focus,
+.contact textarea:focus {
+    outline: none;
+    transform: scale(1.02);
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.15);
+}
+
+
+/* Contact button */
+
+.contact button:hover {
+    transform: translateY(-3px);
+}
+
+
+/* Footer */
+
+footer {
+    animation: footerFade 1s ease-out;
+}
+
+@keyframes footerFade {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
